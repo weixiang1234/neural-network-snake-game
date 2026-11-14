@@ -68,7 +68,7 @@ All evaluated agents eventually experienced body collisions, highlighting the re
 ### Installation
 
 ```bash
-git clone https://github.com/weixiang1234/neural-snake-game.git
+git clone https://github.com/weixiang1234/neural-network-snake-game.git
 cd neural-snake-game
 
 python3 -m venv .venv
