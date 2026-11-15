@@ -2,7 +2,7 @@
 
 import numpy as np
 
-from network import MLP, NetworkConfig
+from snake_ai.network import MLP, NetworkConfig
 
 
 def gradient_check():
@@ -51,8 +51,8 @@ def gradient_check():
 
 def main():
     import json
-    from observations import encode_observation
-    from snake_env import SnakeEnv
+    from snake_ai.observations import encode_observation
+    from snake_ai.snake_env import SnakeEnv
 
     print("Fixed-target gradient check (float64, epsilon=1e-6):")
     print(json.dumps(gradient_check(), indent=2))

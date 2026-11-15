@@ -11,10 +11,10 @@ os.environ.setdefault("PYGAME_HIDE_SUPPORT_PROMPT", "1")
 import numpy as np
 import pygame
 
-from checkpoints import load_inference
-from observations import encode_observation, observation_order
-from safety_lookahead import select_action
-from snake_env import SnakeEnv
+from snake_ai.checkpoints import load_inference
+from snake_ai.observations import encode_observation, observation_order
+from snake_ai.safety_lookahead import select_action
+from snake_ai.snake_env import SnakeEnv
 
 
 WIDTH, HEIGHT = 1450, 930

@@ -2,7 +2,7 @@
 
 import unittest
 
-from snake_env import SnakeConfig, SnakeEnv
+from snake_ai.snake_env import SnakeConfig, SnakeEnv
 
 
 class SnakeRulesTests(unittest.TestCase):

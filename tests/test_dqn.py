@@ -4,9 +4,9 @@ import unittest
 
 import numpy as np
 
-from dqn import DQNAgent, DQNConfig, ReplayBatch, ReplayBuffer
-from observations import encode_observation
-from snake_env import SnakeConfig, SnakeEnv
+from snake_ai.dqn import DQNAgent, DQNConfig, ReplayBatch, ReplayBuffer
+from snake_ai.observations import encode_observation
+from snake_ai.snake_env import SnakeConfig, SnakeEnv
 
 
 class ReplayTests(unittest.TestCase):

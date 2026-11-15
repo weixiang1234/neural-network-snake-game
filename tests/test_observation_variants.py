@@ -7,12 +7,12 @@ from pathlib import Path
 
 import numpy as np
 
-from checkpoints import load_inference, load_training, save_inference, save_training
-from dqn import DQNAgent, DQNConfig
-from evaluate import evaluate_policy
-from network import NetworkConfig
-from observations import OBSERVATION_ORDER, OBSERVATION_ORDER_13, encode_observation, observation_order
-from snake_env import SnakeConfig, SnakeEnv
+from snake_ai.checkpoints import load_inference, load_training, save_inference, save_training
+from snake_ai.dqn import DQNAgent, DQNConfig
+from snake_ai.evaluate import evaluate_policy
+from snake_ai.network import NetworkConfig
+from snake_ai.observations import OBSERVATION_ORDER, OBSERVATION_ORDER_13, encode_observation, observation_order
+from snake_ai.snake_env import SnakeConfig, SnakeEnv
 from train import Trainer, TrainingConfig
 
 
