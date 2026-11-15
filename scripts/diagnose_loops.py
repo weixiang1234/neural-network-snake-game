@@ -7,9 +7,9 @@ from pathlib import Path
 
 import numpy as np
 
-from checkpoints import load_inference
-from observations import encode_observation
-from snake_env import SnakeEnv
+from snake_ai.checkpoints import load_inference
+from snake_ai.observations import encode_observation
+from snake_ai.snake_env import SnakeEnv
 
 
 def board_signature(env):

@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 
 from tests.gradient_check import gradient_check
-from network import MLP, NetworkConfig
+from snake_ai.network import MLP, NetworkConfig
 
 
 class NetworkTests(unittest.TestCase):

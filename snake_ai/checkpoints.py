@@ -9,10 +9,10 @@ import tempfile
 
 import numpy as np
 
-from dqn import DQNAgent, DQNConfig, ReplayBatch
-from network import MLP, NetworkConfig
-from observations import observation_order
-from snake_env import SnakeConfig
+from .dqn import DQNAgent, DQNConfig, ReplayBatch
+from .network import MLP, NetworkConfig
+from .observations import observation_order
+from .snake_env import SnakeConfig
 
 
 FORMAT_VERSION = 1

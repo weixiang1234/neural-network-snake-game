@@ -2,7 +2,7 @@
 
 import numpy as np
 
-from snake_env import SnakeEnv
+from .snake_env import SnakeEnv
 
 
 OBSERVATION_ORDER = (

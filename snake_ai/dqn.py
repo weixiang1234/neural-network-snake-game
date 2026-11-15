@@ -5,8 +5,8 @@ from numbers import Integral
 
 import numpy as np
 
-from network import MLP, NetworkConfig
-from snake_env import SnakeConfig
+from .network import MLP, NetworkConfig
+from .snake_env import SnakeConfig
 
 
 @dataclass(frozen=True)

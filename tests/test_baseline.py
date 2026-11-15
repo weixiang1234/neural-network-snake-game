@@ -6,8 +6,8 @@ import unittest
 
 import numpy as np
 
-from baseline import evaluate_random, random_action, save_results, summarize
-from snake_env import SnakeConfig
+from snake_ai.baseline import evaluate_random, random_action, save_results, summarize
+from snake_ai.snake_env import SnakeConfig
 
 
 class BaselineTests(unittest.TestCase):

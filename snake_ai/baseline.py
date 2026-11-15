@@ -11,7 +11,7 @@ import platform
 
 import numpy as np
 
-from snake_env import SnakeConfig, SnakeEnv
+from .snake_env import SnakeConfig, SnakeEnv
 
 
 def random_action(rng: np.random.Generator) -> int:

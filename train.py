@@ -9,14 +9,14 @@ import signal
 
 import numpy as np
 
-from baseline import summarize
-from checkpoints import decode_config, load_training, save_inference, save_training
-from dqn import DQNAgent, DQNConfig
-from evaluate import evaluate_policy, write_csv
-from network import NetworkConfig
-from observations import encode_observation
-from reward_shaping import food_potential, shaped_reward
-from snake_env import SnakeEnv
+from snake_ai.baseline import summarize
+from snake_ai.checkpoints import decode_config, load_training, save_inference, save_training
+from snake_ai.dqn import DQNAgent, DQNConfig
+from snake_ai.evaluate import evaluate_policy, write_csv
+from snake_ai.network import NetworkConfig
+from snake_ai.observations import encode_observation
+from snake_ai.reward_shaping import food_potential, shaped_reward
+from snake_ai.snake_env import SnakeEnv
 
 
 @dataclass(frozen=True)

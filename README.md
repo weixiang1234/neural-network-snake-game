@@ -56,6 +56,22 @@ These results represent one trained network evaluated on a development seed set,
 
 All evaluated agents eventually experienced body collisions, highlighting the remaining limitations of short-horizon planning.
 
+## Repository Structure
+
+```text
+README.md
+requirements.txt
+.gitignore
+train.py                 # training and full-state resumption
+watch_dashboard.py       # policy and network dashboard
+snake_ai/                # environment, NumPy network, DQN, checkpoints,
+                         # shaping, safety lookahead, baseline, evaluation
+scripts/                 # manual play, safety benchmark, loop diagnosis
+tests/                   # all 65 existing automated tests
+models/                  # preserved trained checkpoint
+assets/                  # gameplay GIF and dashboard image
+```
+
 ## Getting Started
 
 ### Requirements
@@ -76,6 +92,8 @@ source .venv/bin/activate
 
 pip install -r requirements.txt
 ```
+
+Run all commands from the repository root. Tools inside packages use `python -m`.
 
 ### Run the AI
 
@@ -111,11 +129,46 @@ python -m unittest discover -s tests -q
 ## Reproduce the Evaluation
 
 ```bash
-python benchmark_safety.py \
+python -m scripts.benchmark_safety \
     --checkpoint models/v1_episode450_policy.npz \
     --episodes 100 \
     --seed-start 71000 \
     --output-dir results/lookahead_eval_100
+```
+
+## Other Commands
+
+Manual play, inference-only evaluation, and loop diagnosis:
+
+```bash
+python -m scripts.manual_play --seed 0 --fps 8
+python -m snake_ai.evaluate --checkpoint models/v1_episode450_policy.npz --episodes 100 --output results/policy_evaluation.csv
+python -m scripts.diagnose_loops --checkpoint models/v1_episode450_policy.npz --episodes 10 --output results/loop_diagnosis.csv
+python -m snake_ai.baseline --episodes 100 --output results/random_baseline.csv
+```
+
+Use fresh output paths to preserve earlier experiments. These commands do not
+train or modify the saved policy. The safety controller uses full board information
+to filter candidate moves; distinguish its results from the network acting alone.
+
+Training and resumption for a separate experiment:
+
+```bash
+python train.py --help
+python train.py --episodes 500 --seed 0 --output results/new_training_run
+python train.py --resume results/new_training_run/training.npz --episodes 750 --output results/new_training_run
+```
+
+`policy.npz` contains inference weights; `training.npz` additionally stores target
+weights, replay, counters, RNG state, and history for episode-boundary resumption.
+Choose a new directory for each experiment. Ctrl+C requests a save after the
+current episode. The existing 13-input and reward-shaping options remain available
+through `train.py --help`; neither changes a loaded model.
+
+For a dashboard smoke test without a desktop:
+
+```bash
+SDL_VIDEODRIVER=dummy python watch_dashboard.py --checkpoint models/v1_episode450_policy.npz --smoke-test --screenshot /tmp/public_snake_dashboard.png
 ```
 
 ## Limitations

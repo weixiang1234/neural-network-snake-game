@@ -6,9 +6,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from dqn import DQNConfig
-from reward_shaping import food_potential, shaped_reward
-from snake_env import SnakeConfig, SnakeEnv
+from snake_ai.dqn import DQNConfig
+from snake_ai.reward_shaping import food_potential, shaped_reward
+from snake_ai.snake_env import SnakeConfig, SnakeEnv
 from train import Trainer, TrainingConfig
 
 

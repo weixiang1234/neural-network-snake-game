@@ -3,8 +3,8 @@ import unittest
 
 import numpy as np
 
-from observations import OBSERVATION_ORDER, encode_observation
-from snake_env import SnakeConfig, SnakeEnv
+from snake_ai.observations import OBSERVATION_ORDER, encode_observation
+from snake_ai.snake_env import SnakeConfig, SnakeEnv
 
 
 class ObservationTests(unittest.TestCase):

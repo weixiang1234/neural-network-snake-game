@@ -8,7 +8,7 @@ os.environ.setdefault("PYGAME_HIDE_SUPPORT_PROMPT", "1")
 
 import pygame
 
-from snake_env import SnakeEnv
+from snake_ai.snake_env import SnakeEnv
 
 
 def draw(screen, font, env, paused):

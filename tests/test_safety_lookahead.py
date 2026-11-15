@@ -4,8 +4,8 @@ import unittest
 
 import numpy as np
 
-from safety_lookahead import select_action
-from snake_env import SnakeConfig, SnakeEnv
+from snake_ai.safety_lookahead import select_action
+from snake_ai.snake_env import SnakeConfig, SnakeEnv
 
 
 class SafetyLookaheadTests(unittest.TestCase):
@@ -65,9 +65,9 @@ class SafetyLookaheadTests(unittest.TestCase):
             self.assertFalse(decision.no_viable_action)
 
     def test_pure_mode_matches_existing_evaluation(self):
-        from evaluate import evaluate_policy
-        from network import MLP, NetworkConfig
-        from benchmark_safety import run_episode
+        from snake_ai.evaluate import evaluate_policy
+        from snake_ai.network import MLP, NetworkConfig
+        from scripts.benchmark_safety import run_episode
 
         model = MLP(NetworkConfig(), rng=np.random.default_rng(47))
         config = SnakeConfig(5, 5)

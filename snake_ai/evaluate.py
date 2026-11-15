@@ -8,10 +8,10 @@ from pathlib import Path
 
 import numpy as np
 
-from baseline import summarize
-from checkpoints import load_inference
-from observations import encode_observation
-from snake_env import SnakeEnv
+from .baseline import summarize
+from .checkpoints import load_inference
+from .observations import encode_observation
+from .snake_env import SnakeEnv
 
 
 def evaluate_policy(model, environment_config, seeds):
